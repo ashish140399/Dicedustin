@@ -1,0 +1,58 @@
+.form {
+  width: 100%;
+  margin: 1rem;
+}
+
+.ui {
+  padding-left: 8.5rem;
+  padding-right: 8.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 66rem;
+  padding-top: 5%;
+  padding-bottom: 0%;
+}
+
+.bannerWrapper {
+  width: 70%;
+  padding: 20px 0px 24px 15px;
+  position: relative;
+  display: flex;
+  top: 0px;
+  left: 45px;
+}
+
+.bannerWrapper::before {
+    content: '';
+    position: absolute;
+    width: 105%;
+    height: 85%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../../../../../assets/images/footer-bg-sq.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: skewX(-6deg);
+    background: rgba(36,38,42,0.7);
+    mix-blend-mode: normal;
+    border: 0.7px solid rgba(130, 146, 169, 0.1);
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.bannerWrapper::after {
+    content: '';
+    position: absolute;
+    width: 105%;
+    height: 5px;
+    bottom: -10px;
+    left: -6px;
+    background-image: url(../../../../../assets/images/line-border.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.numberBars{
+  width: 90%;
+  margin-top: 15px;
+}

@@ -1,0 +1,35 @@
+@import "~variables";
+
+$padding-wrapper1: 0.75rem;
+$padding-wrapper2: 0.25rem;
+
+
+.sliderWrapper1 {
+  padding: $padding-wrapper1;
+  width: 100%;
+  position: relative;
+  left: -60px; // Change 0
+  @include background-color("300");
+}
+
+.sliderWrapper2 {
+  padding: $padding-wrapper2;
+  border-radius: 0.25rem;
+  // @include background-color("white"); // Change
+}
+
+.wrapper {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  padding-left: $padding-wrapper1 + $padding-wrapper2;
+  padding-right: $padding-wrapper1 + $padding-wrapper2;
+  pointer-events: none;
+  touch-action: none;
+}
+.sliderOuter{
+  position: relative;
+  margin-top: 1em;;
+  margin-bottom: 1em;
+  width:100% ;
+}

@@ -1,0 +1,27 @@
+.entry {
+  font-size: 16px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  color:#fff
+}
+.entry a{
+  color: #FFE787;
+}
+.mobileDevice {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin-right: 0.25em;
+  height: 1.5em;
+}
+
+.heading {
+  margin-bottom: 1rem;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #fff;
+}

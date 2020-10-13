@@ -1,0 +1,60 @@
+
+.input-group > .input {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+}
+
+.input {
+  position: relative;
+}
+
+.input-group .input:not(:last-child) input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.valueStyle {
+  display: block;
+  width: 100%;
+  height: 52px;
+  padding: 10px;
+  padding-left: 47px;
+  padding-right: 50px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-image: url(../../assets/images/bet-btn.png);
+  background-color: transparent;
+  background-size: 100% 100%;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0, .075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.42);
+  border-width: 0px;
+}
+
+.valueStyle:focus {
+  outline: none;
+}
+
+.pairIcon {
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+  width: 19px;
+  height: 21px;
+}
+
+.hexText {
+  color: #bbcfec;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.42);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: 18px;
+  right: 14px;
+}

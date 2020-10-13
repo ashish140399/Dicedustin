@@ -1,0 +1,28 @@
+import * as React from "react";
+import {connect} from "react-redux";
+import {Redirect} from "react-router-dom";
+
+import {Dispatch} from "../../../util/util";
+import {deauthenticate} from "../account/asyncActions";
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+    deauthenticate: () => dispatch(deauthenticate()),
+});
+
+type Props = ReturnType<typeof mapDispatchToProps>;
+
+class LogoutRoute extends React.Component<Props> {
+    componentWillMount() {
+        const {deauthenticate} = this.props;
+        deauthenticate();
+    }
+
+    render() {
+        return <Redirect to="/" />;
+    }
+}
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(LogoutRoute);

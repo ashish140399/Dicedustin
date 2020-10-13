@@ -1,0 +1,132 @@
+@import "~variables";
+
+.center {
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+.infoButton {
+  @include remove-default-button-style();
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  @include color("600");
+  font-size: 0.9rem;
+}
+
+.gameLink {
+  color: #fff;
+  font-weight: bold;
+}
+
+.userButton {
+  @include remove-default-button-style();
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+}
+
+.table {
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-down("xs") {
+    font-size: 0.75rem;
+  }
+}
+
+.head {
+  position: relative;
+  z-index: 2;
+
+  & > tr > th {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.entries {
+  color: #fff;
+
+  tr:nth-child(n) {
+      animation: 500ms ease-out forwards;
+  }
+
+  tr:first-child {
+    animation-name: slideIn
+  }
+
+  tr:nth-child(2n) {
+    animation-name: slide1;
+  }
+
+  tr:nth-child(2n + 3) {
+    animation-name: slide2;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 2rem;
+    @include background-color("white");
+    width: 100%;
+    z-index: 1;
+  }
+
+  // &:after {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   top: 2rem;
+  //   height: 1rem;
+  //   background: linear-gradient($white, rgba(255, 255, 255, 0));
+  //   :global(.night) & {
+  //     background: linear-gradient($white--night, rgba(255 , 255, 255, 0));
+  //   }
+  //   width: 100%;
+  //   z-index: 1;
+  // }
+
+}
+
+.tdGameType {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.gameType {
+  line-height: normal;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.profitHeader {
+  text-align: right;
+}
+
+.profit {
+  text-align: right;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+
+@keyframes slide1 {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slide2 {
+  from {
+    transform: translateY(-100%);
+  }
+}

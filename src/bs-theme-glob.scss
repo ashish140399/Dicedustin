@@ -1,0 +1,476 @@
+@import '~variables';
+// Optional
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/print";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/forms";
+
+
+
+.night body,
+body.night {
+  color: $body-color--night !important;
+  background-color: $body-bg--night !important;
+}
+
+.night .close {
+  color: $close-color--night;
+  text-shadow: $close-text-shadow--night;
+
+  &:not(:disabled):not(.disabled) {
+    @include hover-focus {
+      color: $close-color--night;
+    }
+  }
+}
+
+// background
+.night {
+  @each $color, $value in $theme-colors--night {
+    @include bg-variant(".bg-#{$color}", $value);
+  }
+
+  @if $enable-gradients {
+    @each $color, $value in $theme-colors--night {
+      @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+    }
+  }
+
+  .bg-white {
+    background-color: $white--night !important;
+  }
+
+  .bg-transparen {
+    background-color: transparent !important;
+  }
+
+  .bg-dark {
+    background-color: $gray-900 !important; // header background
+  }
+
+  a {
+    color: $link-color--night;
+    @include hover {
+      color: $link-hover-color--night;
+    }
+  }
+
+  // nav
+  .nav-link {
+    // Disabled state lightens text
+    &.disabled {
+      color: $nav-link-disabled-color--night;
+    }
+  }
+
+  //
+  // Tabs
+  //
+
+  .nav-tabs {
+    border-bottom-color: $nav-tabs-border-color--night;
+
+    .nav-link {
+      border: $nav-tabs-border-width solid transparent;
+
+      @include hover-focus {
+        border-color: $nav-tabs-link-hover-border-color--night;
+      }
+
+      &.disabled {
+        color: $nav-link-disabled-color--night;
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+
+    .nav-link.active,
+    .nav-item.show .nav-link {
+      color: $nav-tabs-link-active-color--night;
+      background-color: $nav-tabs-link-active-bg--night;
+      border-color: $nav-tabs-link-active-border-color--night;
+    }
+  }
+
+  .nav-pills {
+    .nav-link.active,
+    .show > .nav-link {
+      color: $nav-pills-link-active-color--night;
+      background-color: $nav-pills-link-active-bg--night;
+    }
+  }
+}
+
+// navbar
+// make light navbar to dark navbar in the night!
+.night .navbar-light {
+  .navbar-brand {
+    color: $navbar-dark-active-color;
+
+    @include hover-focus {
+      color: $navbar-dark-active-color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-dark-color;
+
+      @include hover-focus {
+        color: $navbar-dark-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-dark-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-dark-active-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-dark-color;
+    border-color: $navbar-dark-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: $navbar-dark-toggler-icon-bg;
+  }
+
+  .navbar-text {
+    color: $navbar-dark-color;
+    a {
+      color: $navbar-dark-active-color;
+
+      @include hover-focus {
+        color: $navbar-dark-active-color;
+      }
+    }
+  }
+}
+
+// sticky footer
+#app {
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+// navbar link
+.navbar-nav {
+  .nav-link {
+    font-weight: 500;
+  }
+}
+
+
+.text-overflow-dynamic-container {
+    position: relative;
+    max-width: 100%;
+    padding: 0 !important;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    vertical-align: text-bottom !important;
+}
+.text-overflow-dynamic-ellipsis {
+    position: absolute;
+    white-space: nowrap;
+    overflow-y: visible;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    min-width: 0;
+    top: 0;
+    left: 0;
+}
+.text-overflow-dynamic-container:after,
+.text-overflow-dynamic-ellipsis:after {
+    content: '-';
+    display: inline-block;
+    visibility: hidden;
+    width: 0;
+}
+
+td {
+  white-space: nowrap;
+}
+
+@include media-breakpoint-down(md){
+  .container {
+    max-width: 100%;
+  }
+}
+
+.chat-open {
+  @include media-breakpoint-up(sm) {
+    .container {
+      width: unquote("calc(100% - #{$chat-width})") !important;
+      margin-left: 0;
+
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .container{
+      width: unquote("calc(100% - #{$chat-width})") !important;
+      margin-left: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .container {
+      width: unquote("calc(100% - #{$chat-width})") !important;
+      margin-left: 0;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .container {
+      width: unquote("calc(100% - #{$chat-width})") !important;
+    }
+  }
+
+  @media (min-width: map_get($container-max-widths, xl) + $chat-width) {
+    .container {
+      width: unquote("calc(100% - #{$chat-width})") !important;
+      margin-left: unquote("calc(50% -  #{(map_get($container-max-widths, xl) + $chat-width) / 2})");
+    }
+  }
+}
+
+.tooltip-inner {
+  max-width: 100em;
+}
+
+.games__form-group {
+  width: 100%;
+}
+
+.input__suffix {
+  @extend .form-control;
+
+  position: absolute;
+  top: 5.5px;
+  bottom: 0;
+  left: 38px;
+  border-color: transparent;
+  //color: transparent;
+  background: transparent;
+  pointer-events: none;
+  color: white;
+}
+
+
+// pointer for buttons
+button { cursor: pointer; }
+
+.popover {
+  max-width: 400px;
+  z-index: 1050; // in background of modal
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.07);
+}
+
+.dropdown-menu {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.07);
+}
+
+em {
+  border-bottom: 2px dotted;
+}
+
+[data-whatintent='touch'] button:focus, [data-whatintent='touch'] .rc-slider-handle:focus, [data-whatintent='touch'] a:focus,
+[data-whatintent='mouse'] button:focus, [data-whatintent='mouse'] .rc-slider-handle:focus, [data-whatintent='mouse'] a:focus
+{
+  outline: none !important;
+  box-shadow: none !important;
+
+}
+
+@each $color, $value in $theme-colors {
+  [data-whatintent='touch'] .btn-#{$color}:focus {
+    background-color: $value;
+    border-color: $value;
+  }
+}
+
+// Change .betButton CSS
+.betButton {
+  position: relative;
+  z-index: 1;
+  display: table;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1A1C20;
+  padding: 20px 60px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  box-shadow: none;
+  border: none;
+  background-image: url('../assets/images/btn-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  border-radius: 3px;
+}
+
+.betButton-spin {
+  padding: 15px 40px;
+  width: 200px;
+}
+
+.betButton:focus,
+.betButton:hover {
+  color: #333;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.betButton::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 10px;
+  left: 5px;
+  transition: all 0.4s ease;
+  z-index: -1;
+  background-image: url('../assets/images/btn-shape.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.betButton:focus:before,
+.betButton:hover:before {
+  top: 0;
+  left: 0;
+}
+
+label {
+  font-size: 0.85em;
+  font-weight: 500;
+  color: $gray-600;
+}
+
+.form-control {
+  &:disabled,
+  &[readonly] {
+    border-color: transparent;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Restore Bootstrap 3 "hidden" utility classes.
+@each $bp in map-keys($grid-breakpoints) {
+  .hidden-#{$bp}-up {
+    @include media-breakpoint-up($bp) {
+      display: none !important;
+    }
+  }
+  .hidden-#{$bp}-down {
+    @include media-breakpoint-down($bp) {
+      display: none !important;
+    }
+  }
+  .hidden-#{$bp}-only{
+    @include media-breakpoint-only($bp){
+      display:none !important;
+    }
+  }
+}
+
+
+
+ 
+
+
+// Silver custom css
+.close{
+  color: #fff;
+  opacity:0.8;
+}
+.close:hover{
+  color: #fff;
+}
+.modal-body{
+  border-radius: 10px;
+}
+.modal-content{
+  background-color: transparent;
+} 
+.form-group label{
+  margin-bottom: 10px;
+}
+.rc-slider{
+  height: 2rem;
+}
+.rc-slider-track{
+  background-image: url('../assets/images/range-gold.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100%;
+  background-color: transparent !important;
+}
+.rc-slider-rail{
+  background-image: url('../assets/images/range-silver.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100%;
+  background-color: transparent !important;
+} 
+.games__form-group{
+  padding-right: 12px;
+}
+
+table thead{
+  background-color: #141417 !important;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.05em;
+  color: #FFE787;
+  border-bottom: 2px solid rgba(130, 146, 169, 0.2)
+}
+table thead tr th{
+  font-weight: 400;
+}
+
+.table{
+  color: #fff ;
+}
