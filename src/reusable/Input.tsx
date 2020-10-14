@@ -106,7 +106,7 @@ export default class Input extends React.Component<Props, State> {
                     onFocus={this.onFocus}
                 />
                 <img src={PairsIcon} alt="icons" className={Style.pairIcon} />
-                <span className={Style.hexText}>HEX</span>
+                <span className={Style.hexText}>HXB</span>
                 {suffix && (
                     <div className="input__suffix">
                         <span style={{color: "transparent"}}>{inputValue}</span>

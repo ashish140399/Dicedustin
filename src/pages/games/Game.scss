@@ -49,11 +49,13 @@
   border: 1px solid ;
 }
 .bullOuter{
-  width: 290px;
+  width: 18vw;
   position: absolute;
-  right: 61px;
-  top: 61px;
+  right: -14vw;
+  top: 50%;
+  transform: translateY(-50%);
 }
-.bullOuter img{
+.bullOuterImg{
   width: 100%;
+  border-radius: 10px;
 }

@@ -226,7 +226,7 @@ class Dice extends React.Component<Props, DiceState> {
 
         return (
             <div>
-                <div className="bullOuter"> <img src="../../../assets/images/bull.png" alt="null"/></div>
+                
                 <Section gray className={Style.sectionStyle}> {/* Section 1 */}
                     <Container>
                         <div className={Style.wrapper}>
@@ -241,6 +241,7 @@ class Dice extends React.Component<Props, DiceState> {
                                     onConflictEnd={this.conflictEnd}
                                 />
                             )}
+                            <div className={Style.bullOuter}> <img src="../../../assets/images/bull.svg" className={Style.bullOuterImg} alt="null"/></div>
                             <DocumentTitle title="Ethereum State Channel Dice - Dicether">
                                 <DiceUi
                                     num={dice.num}
