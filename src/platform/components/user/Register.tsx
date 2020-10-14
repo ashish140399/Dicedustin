@@ -78,7 +78,7 @@ class Register extends React.Component<Props, State> {
                         Play responsibly and do not bet what you can not afford to lose. Do not play if you are under
                         18. Do not play if doing so is illegal in your jurisdiction!
                     </p>
-                    <Button color="primary" type="submit" disabled={isValid !== true} onClick={this.register}>
+                    <Button className="betButton btn"  type="submit" onClick={this.register}>
                         Register
                     </Button>
                     <Button color="link" onClick={authenticate}>

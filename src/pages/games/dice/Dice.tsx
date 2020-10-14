@@ -226,6 +226,7 @@ class Dice extends React.Component<Props, DiceState> {
 
         return (
             <div>
+                <div className="bullOuter"> <img src="../../../assets/images/bull.png" alt="null"/></div>
                 <Section gray className={Style.sectionStyle}> {/* Section 1 */}
                     <Container>
                         <div className={Style.wrapper}>

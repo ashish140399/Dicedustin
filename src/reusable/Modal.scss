@@ -26,3 +26,39 @@
     border-top-color: $modal-footer-border-color--night;
   }
 }
+
+.modalWrapper .text-center{
+  color: #fff;
+}
+
+.modalWrapper form{
+  color: #fff;
+}
+.modalWrapper form p{
+  font-size: 14px;
+}
+
+.modalWrapper form .text-muted{
+  margin-top: 10px;
+  font-size: 14px;
+  margin-bottom: -10px;
+}
+.modalWrapper .betButton{
+  background-color: transparent;
+  padding: 10px 20px;
+  font-size: 11px;
+  margin-right: 8px;
+}
+.modalWrapper .btn{
+  display: inline-block;
+}
+.modalWrapper .hexText{
+  display: none;
+}
+.modalWrapper .btn-link{
+  font-size: 14px;
+  color: rgb(255, 231, 135);
+}
+.modalWrapper h3.text-center{
+  font-size: 22px;
+}
